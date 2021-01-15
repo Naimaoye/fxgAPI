@@ -1,13 +1,15 @@
 import express from 'express';
 import bodyParser from 'body-parser';
 
+import currencyRouter from './routes/index';
+
 const app = express();
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 //API routes
-app.use('/api/v1/auth', user);
+app.use('/api', currencyRouter);
 
 
 // Handle non existing routes
